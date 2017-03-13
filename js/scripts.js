@@ -40,10 +40,11 @@ $(document).ready(function(){
                             'x-cloudmine-apikey' : '0ac9bec7ea0a4d79a92a5e503f3c44b6',
                             'x-cloudmine-sessiontoken' : data.access_token
                         },
-                        success: function (posted) {
+                        success: function (response) {
 
-                            $('#display2').html("RESULT ==>  " + (JSON.stringify(posted.result.message)));
-                            console.log("The response is :  " + JSON.stringify(posted));
+                            alert('Result' +JSON.stringify(response));
+                           // $('#display2').html("RESULT ==>  " + (JSON.stringify(response.result.message)));
+                            console.log("The response is :  " + JSON.stringify(response));
 
                         }
 
@@ -53,6 +54,7 @@ $(document).ready(function(){
             },
             error: function(error){
                 console.log(error);
+                alert(error);
             }
         });
     });
@@ -83,7 +85,6 @@ $(document).ready(function(){
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "GET",
-                       // data : $('#memberSearchForm').val(),
                         data : $('#memberSearchForm').serializeJSON(),
                         dataType: "json",
                         crossDomain: true,
@@ -93,26 +94,65 @@ $(document).ready(function(){
                             'x-cloudmine-sessiontoken' : data.access_token
                         },
                         success: function (response) {
-                             $('#display3').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
+
+                            // append input control at end of form
+                            // $("<input type='text' value='' />")
+                            //     .attr("id", "cch_id")
+                            //     .attr("name", "cch_id")
+                            //     .appendTo("#theform");
+
+                        //  $('#display3').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
                            console.log("The response is :  " + JSON.stringify(response));
+
+                            for( x in response){
+                               var result = response[x].message;
+                                for(y in result){
+                                   result[y]
+                                    $('#username').val(result[y].profile.username);
+                                    $('#email').val(result[y].profile.email);
+                                    $('#password').val(result[y].profile.password);  //disable this
+                                    $('#first_name').val(result[y].profile.first_name);
+                                    $('#last_name').val(result[y].profile.last_name);
+                                    $('#address1').val(result[y].profile.address1);
+                                    $('#address2').val(result[y].profile.address2);
+                                    $('#city').val(result[y].profile.city);
+                                    $('#state').val(result[y].profile.state);
+                                    $('#zipcode').val(result[y].profile.zipcode);
+                                    $('#mobile').val(result[y].profile.phone["mobile"]);
+                                    $('#home').val(result[y].profile.phone["home"]);
+                                    $('#office').val(result[y].profile.phone["office"]);
+                                    $('#partner_id').val(result[y].profile.partner_id);
+                                    $('#role').val(result[y].profile.role);
+                                    $('#birthdate').val(result[y].profile.birthdate);
+                                    $('#care_manager').val(result[y].profile.care_manager);
+                                    $('#status').val(result[y].profile.status);
+                                    $('#effective_date').val(result[y].profile.effective_date);
+                                    $('#cch_id').val(result[y].profile.cch_id);
+                                    $('#ldap_id').val(result[y].profile.ldap_id);
+
+                                }
+                            }
+
+                            //append fields here
+
+                            // <label for="username">Userame:</label>
+                            // <input type="text" class="form-control"  id="username" name="username">
 
                         }
 
                     });
 
+
                 }
             },
             error: function(error){
                 console.log(error);
+                alert(error);
             }
         });
     });
 
 });
-
-
-
-
 
 
 
@@ -150,10 +190,10 @@ $(document).ready(function(){
                             'x-cloudmine-apikey' : '0ac9bec7ea0a4d79a92a5e503f3c44b6',
                             'x-cloudmine-sessiontoken' : data.access_token
                         },
-                        success: function (posted) {
-
-                            $('#display4').html("RESULT ==>  " + (JSON.stringify(posted.result.message)));
-                            console.log("The response is :  " + JSON.stringify(posted));
+                        success: function (response) {
+                            alert('Result' +JSON.stringify(response));
+                           // $('#display4').html("RESULT ==>  " + (JSON.stringify(response.result.message)));
+                            console.log("The response is :  " + JSON.stringify(response));
 
                         }
 
@@ -163,6 +203,7 @@ $(document).ready(function(){
             },
             error: function(error){
                 console.log(error);
+                alert(error);
             }
         });
     });
@@ -205,8 +246,27 @@ $(document).ready(function(){
                         },
                         success: function (response) {
 
-                            $('#display5').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
+                           // $('#display5').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
                             console.log("The response is :  " + JSON.stringify(response));
+
+                            for( x in response){
+                                var result = response[x].message;
+                                for(y in result){
+                                    result[y]
+                                    $('#cmusername').val(result[y].profile.username);
+                                    $('#cmemail').val(result[y].profile.email);
+                                    $('#cmpassword').val(result[y].profile.password);  //disable this
+                                    $('#cmfirst_name').val(result[y].profile.first_name);
+                                    $('#cmlast_name').val(result[y].profile.last_name);
+                                    $('#cmzipcode').val(result[y].profile.zipcode);
+                                    $('#cmoffice').val(result[y].profile.phone["office"]);
+                                    $('#cmmobile').val(result[y].profile.phone["mobile"]);
+                                    $('#cmpartner_id').val(result[y].profile.partner_id);
+                                    $('#cmrole').val(result[y].profile.role);
+                                    $('#cmstatus').val(result[y].profile.status);
+
+                                }
+                            }
 
                         }
 
@@ -216,6 +276,7 @@ $(document).ready(function(){
             },
             error: function(error){
                 console.log(error);
+                alert(error);
             }
         });
     });
@@ -258,10 +319,11 @@ $(document).ready(function(){
                             'x-cloudmine-apikey' : '0ac9bec7ea0a4d79a92a5e503f3c44b6',
                             'x-cloudmine-sessiontoken' : data.access_token
                         },
-                        success: function (posted) {
+                        success: function (response) {
 
-                            $('#display6').html("SEARCH RESULT ==>  " + (JSON.stringify(posted.result.message)));
-                            console.log("The response is :  " + JSON.stringify(posted));
+                            alert('Result' +JSON.stringify(response));
+                          //  $('#display6').html("SEARCH RESULT ==>  " + (JSON.stringify(posted.result.message)));
+                            console.log("The response is :  " + JSON.stringify(response));
 
                         }
 
@@ -271,6 +333,7 @@ $(document).ready(function(){
             },
             error: function(error){
                 console.log(error);
+                alert(error);
             }
         });
     });
@@ -314,8 +377,35 @@ $(document).ready(function(){
                         },
                         success: function (response) {
 
-                            $('#display7').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
+                           // $('#display7').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
                             console.log("The response is :  " + JSON.stringify(response));
+
+                            for( x in response){
+                                var result = response[x].message;
+                                for(y in result){
+                                    result[y]
+                                    $('#cgfullname').val(result[y].profile.full_name);
+                                    $('#cgemail').val(result[y].profile.email);
+                                    $('#cgpassword').val(result[y].profile.password);  //disable this
+                                    $('#cgfirst_name').val(result[y].profile.first_name);
+                                    $('#cglast_name').val(result[y].profile.last_name);
+                                    $('#cgaddress1').val(result[y].profile.address1);
+                                    $('#cgaddress2').val(result[y].profile.address2);
+                                    $('#cgcity').val(result[y].profile.city);
+                                    $('#cgstate').val(result[y].profile.state);
+                                    $('#cgzipcode').val(result[y].profile.zipcode);
+                                    $('#cgmobile').val(result[y].profile.phone["mobile"]);
+                                    $('#cghome').val(result[y].profile.phone["home"]);
+                                    $('#cgrelationship').val(result[y].profile.relationship);
+                                    $('#cgpartner_id').val(result[y].profile.partner_id);
+                                    $('#cgrole').val(result[y].profile.role);
+                                   // $('#birthdate').val(result[y].profile.birthdate);
+                                    $('#member_partner_id').val(result[y].profile.member_partner_id);
+                                   // $('#status').val(result[y].profile.status);
+                                    // $('#effective_date').val(result[y].profile.effective_date);
+
+                                }
+                            }
 
                         }
 
@@ -331,3 +421,5 @@ $(document).ready(function(){
 
 });
 
+//CREATE A brandnew DIV or element
+//$('<div></div>')

@@ -60,7 +60,7 @@
             <br>
 
             <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="memberForm">
-                <div class="form-group">
+                <div id="theform" class="form-group" >
                     <label for="username">Userame:</label>
                     <input type="text" class="form-control"  id="username" name="username">
 
@@ -93,13 +93,13 @@
 
                     <!--<fieldset>-->
                         <label for="phone">Mobile</label>
-                        <input type="tel" class="form-control" id="phone" name="phone[mobile]">
+                        <input type="text" class="form-control" id="mobile" name="phone[mobile]">
 
                         <label for="phone">Home</label>
-                        <input type="tel" class="form-control" id="phone" name="phone[home]">
+                        <input type="text" class="form-control" id="home" name="phone[home]">
 
                         <label for="phone">Office</label>
-                        <input type="tel" class="form-control" id="phone" name="phone[office]">
+                        <input type="text" class="form-control" id="office" name="phone[office]">
                     <!--</fieldset>-->
 
                     <label for="partner_id">AHC Member ID</label>
@@ -111,14 +111,20 @@
                     <label for="birthdate">Birth Date</label>
                     <input type="date" class="form-control" id="birthdate" name="birthdate">
 
-                    <label for="caremanager">AHC Care Manager ID</label>
-                    <input type="text" class="form-control" id="caremanager" name="care_manager">
+                    <label for="care_manager">AHC Care Manager ID</label>
+                    <input type="text" class="form-control" id="care_manager" name="care_manager">
 
                     <label for="status">Status</label>
                     <input type="text" class="form-control" id="status" name="status">
 
                     <label for="effective_date">Effective Date</label>
                     <input type="date" class="form-control" id="effective_date" name="effective_date">
+
+                    <label for="cch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="cch_id" name="cch_id" disabled>
+
+                    <label for="ldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="ldap_id" name="ldap_id" disabled>
 
                 </div>
                 <button id="memberButton" type="submit" class="btn btn-primary">Submit</button>
@@ -146,35 +152,38 @@
             <form role="form" id="caremanagerForm">
                 <div class="form-group">
 
-                    <label for="partner_id">AHC Care Manager ID</label>
-                    <input type="text" class="form-control" id="partner_id" name="partner_id">
+                    <label for="cmpartner_id">AHC Care Manager ID</label>
+                    <input type="text" class="form-control" id="cmpartner_id" name="partner_id">
 
-                    <label for="first_name">Firstname</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name">
+                    <label for="cmusername">Userame:</label>
+                    <input type="text" class="form-control"  id="cmusername" name="username">
 
-                    <label for="last_name">Lastname</label>
-                    <input type="text"  class="form-control" id="last_name" name="last_name">
+                    <label for="cmfirst_name">Firstname</label>
+                    <input type="text" class="form-control" id="cmfirst_name" name="first_name">
 
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <label for="cmlast_name">Lastname</label>
+                    <input type="text"  class="form-control" id="cmlast_name" name="last_name">
 
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="cmemail">Email address:</label>
+                    <input type="email" class="form-control" id="cmemail" name="email">
+
+                    <label for="cmpassword">Password:</label>
+                    <input type="password" class="form-control" id="cmpassword" name="password">
 
                     <label for="phone">Office</label>
-                    <input type="tel" class="form-control" id="phone" name="phone[office]">
+                    <input type="text" class="form-control" id="cmoffice" name="phone[cmoffice]">
 
                     <label for="phone">Mobile</label>
-                    <input type="tel" class="form-control" id="phone" name="phone[mobile]">
+                    <input type="text" class="form-control" id="cmmobile" name="phone[cmmobile]">
 
-                    <label for="zipcode">Zipcode</label>
-                    <input type="text" class="form-control" id="zipcode" name="zip_code">
+                    <label for="cmzipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="cmzipcode" name="zipcode">
 
-                    <label for="role">Role</label>
-                    <input type="text" class="form-control" id="role" name="role">
+                    <label for="cmrole">Role</label>
+                    <input type="text" class="form-control" id="cmrole" name="role">
 
-                    <label for="status">Status</label>
-                    <input type="text" class="form-control" id="status" name="status">
+                    <label for="cmstatus">Status</label>
+                    <input type="text" class="form-control" id="cmstatus" name="status">
 
                 </div>
                 <button id="caremanagerButton" type="submit" class="btn btn-primary">Submit</button>
@@ -204,44 +213,50 @@
             <form role="form" id="caregiverForm">
                 <div class="form-group">
 
-                    <label for="partner_id">AHC Care Giver ID</label>
-                    <input type="text" class="form-control" id="partner_id" name="partner_id">
+                    <label for="cgpartner_id">AHC Care Giver ID</label>
+                    <input type="text" class="form-control" id="cgpartner_id" name="partner_id">
 
-                    <label for="fullname">Fullame:</label>
-                    <input type="text" class="form-control"  id="fullname" name="full_name">
+                    <label for="cgfullname">Fullame:</label>
+                    <input type="text" class="form-control"  id="cgfullname" name="full_name">
 
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <label for="cgfirst_name">Firstname</label>
+                    <input type="text" class="form-control" id="cgfirst_name" name="first_name">
 
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="cglast_name">Lastname</label>
+                    <input type="text"  class="form-control" id="cglast_name" name="last_name">
 
-                    <label for="address1">Addres1</label>
-                    <input type="text" class="form-control" id="address1" name="address_1">
+                    <label for="cgemail">Email:</label>
+                    <input type="email" class="form-control" id="cgemail" name="email">
 
-                    <label for="address2">Addres2</label>
-                    <input type="text" class="form-control" id="address2" name="address_2">
+                    <label for="cgpassword">Password:</label>
+                    <input type="password" class="form-control" id="cgpassword" name="password">
 
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city">
+                    <label for="cgaddress1">Addres1</label>
+                    <input type="text" class="form-control" id="cgaddress1" name="address_1">
 
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" name="state">
+                    <label for="cgaddress2">Addres2</label>
+                    <input type="text" class="form-control" id="cgaddress2" name="address_2">
 
-                    <label for="zipcode">Zipcode</label>
-                    <input type="text" class="form-control" id="zipcode" name="zipcode">
+                    <label for="cgcity">City</label>
+                    <input type="text" class="form-control" id="cgcity" name="city">
+
+                    <label for="cgstate">State</label>
+                    <input type="text" class="form-control" id="cgstate" name="state">
+
+                    <label for="cgzipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="cgzipcode" name="zipcode">
 
                     <label for="phone">Home</label>
-                    <input type="tel" class="form-control" id="phone" name="phone[home]">
+                    <input type="text" class="form-control" id="cghome" name="phone[cghome]">
 
                     <label for="phone">Mobile</label>
-                    <input type="tel" class="form-control" id="phone" name="phone[mobile]">
+                    <input type="text" class="form-control" id="cgmobile" name="phone[cgmobile]">
 
-                    <label for="relationship">Relationship</label>
-                    <input type="tel" class="form-control" id="relationship" name="relationship">
+                    <label for="cgrelationship">Relationship</label>
+                    <input type="tel" class="form-control" id="cgrelationship" name="relationship">
 
-                    <label for="role">Role</label>
-                    <input type="text" class="form-control" id="role" name="role">
+                    <label for="cgrole">Role</label>
+                    <input type="text" class="form-control" id="cgrole" name="role">
 
                     <label for="member_partner_id">AHC Member ID</label>
                     <input type="text" class="form-control" id="member_partner_id" name="member_partner_id">
