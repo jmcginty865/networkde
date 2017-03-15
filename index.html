@@ -29,15 +29,18 @@
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#members" role="tab">Members</a></li>
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#caremanagers" role="tab">Caremanagers</a></li>
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#caregivers" role="tab">Caregivers</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#guardians" role="tab">Guardians</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tier1" role="tab">Tier1</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tier2" role="tab">Tier2</a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
 
         <div role="tabpanel" class="tab-pane active" id="members">
             <h1>Members</h1>
-
             <br>
 
+            <!-- Member Search -->
             <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="memberSearchForm">
                 <div class="input-group">
                     <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
@@ -47,28 +50,23 @@
                 </div>
             </form>
 
-
-
-            <!--
-            <div id="display1">this is the display</div>
-            -->
-            <br>
-              <div id="display2"></div>
             <br>
 
-            <div id="display3"></div>
-            <br>
-
+            <!-- Member Form -->
             <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="memberForm">
                 <div id="theform" class="form-group" >
+
+                    <label for="partner_id">AHC Member ID</label>
+                    <input type="text" class="form-control" id="partner_id" name="partner_id">
+
                     <label for="username">Userame:</label>
                     <input type="text" class="form-control"  id="username" name="username">
 
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email">
-
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" id="password" name="password">
+
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email">
 
                     <label for="first_name">Firstname</label>
                     <input type="text" class="form-control" id="first_name" name="first_name">
@@ -102,11 +100,8 @@
                         <input type="text" class="form-control" id="office" name="phone[office]">
                     <!--</fieldset>-->
 
-                    <label for="partner_id">AHC Member ID</label>
-                    <input type="text" class="form-control" id="partner_id" name="partner_id">
-
-                    <label for="role">Role</label>
-                    <input type="text" class="form-control" id="role" name="role">
+                    <!--<label for="role">Role</label>-->
+                    <input type="hidden" class="form-control" id="role" name="role" value="MEMBER">
 
                     <label for="birthdate">Birth Date</label>
                     <input type="date" class="form-control" id="birthdate" name="birthdate">
@@ -114,8 +109,12 @@
                     <label for="care_manager">AHC Care Manager ID</label>
                     <input type="text" class="form-control" id="care_manager" name="care_manager">
 
-                    <label for="status">Status</label>
-                    <input type="text" class="form-control" id="status" name="status">
+                    <label for="status" id="statuslabel">Status (select one):</label>
+                    <!-- <input type="text" class="form-control" id="status" name="status" value="active"> -->
+                    <select class="form-control" id="status" name="status">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
 
                     <label for="effective_date">Effective Date</label>
                     <input type="date" class="form-control" id="effective_date" name="effective_date">
@@ -131,6 +130,7 @@
             </form>
         </div>
 
+        <!-- Care Manager Search -->
         <div role="tabpanel" class="tab-pane" id="caremanagers">
             <h1>Caremanagers</h1>
             <br>
@@ -143,12 +143,8 @@
                 </div>
             </form>
             <br>
-            <br>
-            <div id="display4"></div>
-            <br>
 
-            <div id="display5"></div>
-            <br>
+            <!-- Care Manager Form -->
             <form role="form" id="caremanagerForm">
                 <div class="form-group">
 
@@ -158,17 +154,17 @@
                     <label for="cmusername">Userame:</label>
                     <input type="text" class="form-control"  id="cmusername" name="username">
 
+                    <label for="cmpassword">Password:</label>
+                    <input type="password" class="form-control" id="cmpassword" name="password">
+
+                    <label for="cmemail">Email address:</label>
+                    <input type="email" class="form-control" id="cmemail" name="email">
+
                     <label for="cmfirst_name">Firstname</label>
                     <input type="text" class="form-control" id="cmfirst_name" name="first_name">
 
                     <label for="cmlast_name">Lastname</label>
                     <input type="text"  class="form-control" id="cmlast_name" name="last_name">
-
-                    <label for="cmemail">Email address:</label>
-                    <input type="email" class="form-control" id="cmemail" name="email">
-
-                    <label for="cmpassword">Password:</label>
-                    <input type="password" class="form-control" id="cmpassword" name="password">
 
                     <label for="phone">Office</label>
                     <input type="text" class="form-control" id="cmoffice" name="phone[cmoffice]">
@@ -179,11 +175,18 @@
                     <label for="cmzipcode">Zipcode</label>
                     <input type="text" class="form-control" id="cmzipcode" name="zipcode">
 
-                    <label for="cmrole">Role</label>
-                    <input type="text" class="form-control" id="cmrole" name="role">
+                   <!-- <label for="cmrole">Role</label>
+                    <input type="text" class="form-control" id="cmrole" name="role"> -->
+                    <input type="hidden" class="form-control" id="cmrole" name="role" value="CAREMANAGER">
 
                     <label for="cmstatus">Status</label>
                     <input type="text" class="form-control" id="cmstatus" name="status">
+
+                    <label for="cmcch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="cmcch_id" name="cch_id" disabled>
+
+                    <label for="cmldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="cmldap_id" name="ldap_id" disabled>
 
                 </div>
                 <button id="caremanagerButton" type="submit" class="btn btn-primary">Submit</button>
@@ -193,6 +196,8 @@
         <div role="tabpanel" class="tab-pane" id="caregivers">
             <h1>Caregivers</h1>
             <br>
+
+            <!-- Care Giver Search -->
             <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="caregiverSearchForm">
                 <div class="input-group">
                     <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
@@ -202,19 +207,19 @@
                 </div>
             </form>
             <br>
-            <br>
-            <div id="display6"></div>
-            <br>
 
-            <div id="display7"></div>
-            <br>
-
-            <br>
+            <!-- Care Giver Form -->
             <form role="form" id="caregiverForm">
                 <div class="form-group">
 
                     <label for="cgpartner_id">AHC Care Giver ID</label>
                     <input type="text" class="form-control" id="cgpartner_id" name="partner_id">
+
+                    <label for="cgemail">Email:</label>
+                    <input type="email" class="form-control" id="cgemail" name="email">
+
+                    <label for="cgpassword">Password:</label>
+                    <input type="password" class="form-control" id="cgpassword" name="password">
 
                     <label for="cgfullname">Fullame:</label>
                     <input type="text" class="form-control"  id="cgfullname" name="full_name">
@@ -224,12 +229,6 @@
 
                     <label for="cglast_name">Lastname</label>
                     <input type="text"  class="form-control" id="cglast_name" name="last_name">
-
-                    <label for="cgemail">Email:</label>
-                    <input type="email" class="form-control" id="cgemail" name="email">
-
-                    <label for="cgpassword">Password:</label>
-                    <input type="password" class="form-control" id="cgpassword" name="password">
 
                     <label for="cgaddress1">Addres1</label>
                     <input type="text" class="form-control" id="cgaddress1" name="address_1">
@@ -255,17 +254,286 @@
                     <label for="cgrelationship">Relationship</label>
                     <input type="tel" class="form-control" id="cgrelationship" name="relationship">
 
-                    <label for="cgrole">Role</label>
-                    <input type="text" class="form-control" id="cgrole" name="role">
+                   <!-- <label for="cgrole">Role</label>
+                    <input type="text" class="form-control" id="cgrole" name="role"> -->
+                    <input type="hidden" class="form-control" id="cgrole" name="role" value="CAREGIVER">
 
                     <label for="member_partner_id">AHC Member ID</label>
                     <input type="text" class="form-control" id="member_partner_id" name="member_partner_id">
+
+                    <label for="cgcch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="cgcch_id" name="cch_id" disabled>
+
+                    <label for="cgldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="cgldap_id" name="ldap_id" disabled>
 
                 </div>
                 <button id="caregiverButton" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
+
+
+        <div role="tabpanel" class="tab-pane" id="guardians">
+            <h1>Guardians</h1>
+            <br>
+
+        <!-- Guardian Search -->
+        <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="guardianSearchForm">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
+                <div class="input-group-btn">
+                    <button id="guardianSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+        <!-- Guardian Form -->
+        <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="guardianForm">
+            <div class="form-group" >
+
+                <label for="gdpartner_id">AHC Guardian ID</label>
+                <input type="text" class="form-control" id="gdpartner_id" name="partner_id">
+
+                <label for="gdusername">Userame:</label>
+                <input type="text" class="form-control"  id="gdusername" name="username">
+
+                <label for="gdpassword">Password:</label>
+                <input type="gdpassword" class="form-control" id="gdpassword" name="password">
+
+                <label for="gdemail">Email address:</label>
+                <input type="gdemail" class="form-control" id="gdemail" name="email">
+
+                <label for="gdfirst_name">Firstname</label>
+                <input type="text" class="form-control" id="gdfirst_name" name="first_name">
+
+                <label for="gdlast_name">Lastname</label>
+                <input type="text"  class="form-control" id="gdlast_name" name="last_name">
+
+                <label for="gdaddress1">Addres1</label>
+                <input type="text" class="form-control" id="gdaddress1" name="address1">
+
+                <label for="gdaddress2">Addres2</label>
+                <input type="text" class="form-control" id="gdaddress2" name="address2">
+
+                <label for="gdcity">City</label>
+                <input type="text" class="form-control" id="gdcity" name="city">
+
+                <label for="gdstate">State</label>
+                <input type="text" class="form-control" id="gdstate" name="state">
+
+                <label for="gdzipcode">Zipcode</label>
+                <input type="text" class="form-control" id="gdzipcode" name="zipcode">
+
+                <!--<fieldset>-->
+                <label for="phone">Mobile</label>
+                <input type="text" class="form-control" id="gdmobile" name="phone[gdmobile]">
+
+                <label for="phone">Home</label>
+                <input type="text" class="form-control" id="gdhome" name="phone[gdhome]">
+
+                <label for="phone">Office</label>
+                <input type="text" class="form-control" id="gdoffice" name="phone[gdoffice]">
+                <!--</fieldset>-->
+
+                <!--<label for="role">Role</label>-->
+                <input type="hidden" class="form-control" id="gdrole" name="role" value="GUARDIAN">
+
+                <label for="gdbirthdate">Birth Date</label>
+                <input type="date" class="form-control" id="gdbirthdate" name="birthdate">
+
+                <label for="gdcare_manager">AHC Care Manager ID</label>
+                <input type="text" class="form-control" id="gdcare_manager" name="care_manager">
+
+                <label for="gdstatus" id="gdstatuslabel">Status (select one):</label>
+                <!-- <input type="text" class="form-control" id="status" name="status" value="active"> -->
+                <select class="form-control" id="gdstatus" name="status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+
+                <label for="gdeffective_date">Effective Date</label>
+                <input type="date" class="form-control" id="gdeffective_date" name="effective_date">
+
+                <label for="gdmember_partner_id">AHC Member ID</label>
+                <input type="text" class="form-control" id="gdmember_partner_id" name="member_partner_id">
+
+                <label for="gdcch_id">CCH_ID</label>
+                <input type="text" class="form-control" id="gdcch_id" name="cch_id" disabled>
+
+                <label for="gdldap_id">LDAP ID</label>
+                <input type="text" class="form-control" id="gdldap_id" name="ldap_id" disabled>
+
+            </div>
+            <button id="guardianButton" type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="tier1">
+            <h1>Tier 1 Support Rep</h1>
+            <br>
+
+    <!-- Tier1 Search -->
+    <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="tieroneSearchForm">
+        <div class="input-group">
+            <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
+            <div class="input-group-btn">
+                <button id="tieroneSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+
+    <!-- Tier1 Form -->
+    <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="tieroneForm">
+        <div class="form-group" >
+
+            <label for="t1username">Userame:</label>
+            <input type="text" class="form-control"  id="t1username" name="username">
+
+            <label for="t1password">Password:</label>
+            <input type="t1password" class="form-control" id="t1password" name="password">
+
+            <label for="t1email">Email address:</label>
+            <input type="t1email" class="form-control" id="t1email" name="email">
+
+            <label for="t1first_name">Firstname</label>
+            <input type="text" class="form-control" id="t1first_name" name="first_name">
+
+            <label for="t1last_name">Lastname</label>
+            <input type="text"  class="form-control" id="t1last_name" name="last_name">
+
+            <label for="t1address1">Addres1</label>
+            <input type="text" class="form-control" id="t1address1" name="address1">
+
+            <label for="t1address2">Addres2</label>
+            <input type="text" class="form-control" id="t1address2" name="address2">
+
+            <label for="t1city">City</label>
+            <input type="text" class="form-control" id="t1city" name="city">
+
+            <label for="t1state">State</label>
+            <input type="text" class="form-control" id="t1state" name="state">
+
+            <label for="t1zipcode">Zipcode</label>
+            <input type="text" class="form-control" id="t1zipcode" name="zipcode">
+
+            <!--<fieldset>-->
+            <label for="phone">Mobile</label>
+            <input type="text" class="form-control" id="t1mobile" name="phone[t1mobile]">
+
+            <label for="phone">Home</label>
+            <input type="text" class="form-control" id="t1home" name="phone[t1home]">
+
+            <label for="phone">Office</label>
+            <input type="text" class="form-control" id="t1office" name="phone[t1office]">
+            <!--</fieldset>-->
+
+            <!--<label for="role">Role</label>-->
+            <input type="hidden" class="form-control" id="t1role" name="role" value="TIER1SUPPORT">
+
+            <label for="t1birthdate">Birth Date</label>
+            <input type="date" class="form-control" id="t1birthdate" name="birthdate">
+
+            <label for="t1cch_id">CCH_ID</label>
+            <input type="text" class="form-control" id="t1cch_id" name="cch_id" disabled>
+
+            <label for="t1ldap_id">LDAP ID</label>
+            <input type="text" class="form-control" id="t1ldap_id" name="ldap_id" disabled>
+
+        </div>
+        <button id="tieroneButton" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+        <div role="tabpanel" class="tab-pane" id="tier2">
+            <h1>Tier 2 Support Rep</h1>
+            <br>
+
+            <!-- Tier2 Search -->
+            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="tiertwoSearchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
+                    <div class="input-group-btn">
+                        <button id="tiertwoSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+
+            <!-- Tier2 Form -->
+            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="tiertwoForm">
+                <div class="form-group" >
+
+                    <label for="t2username">Userame:</label>
+                    <input type="text" class="form-control"  id="t2username" name="username">
+
+                    <label for="t2password">Password:</label>
+                    <input type="t2password" class="form-control" id="t2password" name="password">
+
+                    <label for="t2email">Email address:</label>
+                    <input type="t2email" class="form-control" id="t2email" name="email">
+
+                    <label for="t2first_name">Firstname</label>
+                    <input type="text" class="form-control" id="t2first_name" name="first_name">
+
+                    <label for="t2last_name">Lastname</label>
+                    <input type="text"  class="form-control" id="t2last_name" name="last_name">
+
+                    <label for="t2address1">Addres1</label>
+                    <input type="text" class="form-control" id="t2address1" name="address1">
+
+                    <label for="t2address2">Addres2</label>
+                    <input type="text" class="form-control" id="t2address2" name="address2">
+
+                    <label for="t2city">City</label>
+                    <input type="text" class="form-control" id="t2city" name="city">
+
+                    <label for="t2state">State</label>
+                    <input type="text" class="form-control" id="t2state" name="state">
+
+                    <label for="t2zipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="t2zipcode" name="zipcode">
+
+                    <!--<fieldset>-->
+                    <label for="phone">Mobile</label>
+                    <input type="text" class="form-control" id="t2mobile" name="phone[t2mobile]">
+
+                    <label for="phone">Home</label>
+                    <input type="text" class="form-control" id="t2home" name="phone[t2home]">
+
+                    <label for="phone">Office</label>
+                    <input type="text" class="form-control" id="t2office" name="phone[t2office]">
+                    <!--</fieldset>-->
+
+                    <!--<label for="role">Role</label>-->
+                    <input type="hidden" class="form-control" id="t2role" name="role" value="TIER2SUPPORT">
+
+                    <label for="t2birthdate">Birth Date</label>
+                    <input type="date" class="form-control" id="t2birthdate" name="birthdate">
+
+                    <label for="t2cch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="t2cch_id" name="cch_id" disabled>
+
+                    <label for="t2ldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="t2ldap_id" name="ldap_id" disabled>
+
+                </div>
+                <button id="tiertwoButton" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+<!----If needed add more tabs here -->
+
+</div>
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->

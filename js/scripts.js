@@ -28,7 +28,7 @@ $(document).ready(function(){
             success: function (data) {
 
                 if(data != " "  || null){
-                    $('#display1').html(data.access_token);
+                   // $('#display1').html(data.access_token);
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "POST",
@@ -94,13 +94,6 @@ $(document).ready(function(){
                             'x-cloudmine-sessiontoken' : data.access_token
                         },
                         success: function (response) {
-
-                            // append input control at end of form
-                            // $("<input type='text' value='' />")
-                            //     .attr("id", "cch_id")
-                            //     .attr("name", "cch_id")
-                            //     .appendTo("#theform");
-
                         //  $('#display3').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
                            console.log("The response is :  " + JSON.stringify(response));
 
@@ -125,23 +118,22 @@ $(document).ready(function(){
                                     $('#role').val(result[y].profile.role);
                                     $('#birthdate').val(result[y].profile.birthdate);
                                     $('#care_manager').val(result[y].profile.care_manager);
+                                   // $('#statuslabel').hide();
+                                   // $('#status').hide();
+                                   // $("#status_display").val(result[y].profile.status);
                                     $('#status').val(result[y].profile.status);
                                     $('#effective_date').val(result[y].profile.effective_date);
                                     $('#cch_id').val(result[y].profile.cch_id);
                                     $('#ldap_id').val(result[y].profile.ldap_id);
+                                    //$('#theform').append('<label for="status_display">Status</label><input type="text" class="form-control" id="status_display" name="status_display" disabled >');
+                                   // $("#status_display").val(result[y].profile.status);
 
                                 }
                             }
 
-                            //append fields here
-
-                            // <label for="username">Userame:</label>
-                            // <input type="text" class="form-control"  id="username" name="username">
-
                         }
 
                     });
-
 
                 }
             },
@@ -176,9 +168,7 @@ $(document).ready(function(){
                 Authorization:"Basic Y2xvdWRtaW5lOktRSGg2UEFBTUF2VnVuTzQ2V0tQNjJZNXhqN012ang2N3d0QzBpZ2J5eTdSVXk4bnhzRTBTd1AzTzU3M1UyVWk="
             },
             success: function (data) {
-
                 if(data != " "  || null){
-                    $('#display3').html(data.access_token);
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "POST",
@@ -307,7 +297,7 @@ $(document).ready(function(){
             success: function (data) {
 
                 if(data != " "  || null){
-                    $('#display6').html(data.access_token);
+                   // $('#display6').html(data.access_token);
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "POST",
@@ -362,7 +352,6 @@ $(document).ready(function(){
             success: function (data) {
 
                 if(data != " "  || null){
-                    // $('#display1').html(data.access_token);
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "GET",
@@ -421,5 +410,24 @@ $(document).ready(function(){
 
 });
 
-//CREATE A brandnew DIV or element
-//$('<div></div>')
+
+//TO DO's
+
+//Guardian Form
+
+//Guardian search
+
+//Tier 1 Form
+
+//Tier 1 search
+
+//Tier 2 Form
+
+//Tier 2 search
+
+//oauth delegation or username and password option
+
+
+// SEARCH  (TO DO!!!)
+// create dropdown for each search terms
+// pick from a drop down pick a value
