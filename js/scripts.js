@@ -225,7 +225,6 @@ $(document).ready(function(){
                     $.ajax({
                         url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
                         type: "GET",
-                        // data : $('#memberSearchForm').val(),
                         data : $('#caremanagerSearchForm').serializeJSON(),
                         dataType: "json",
                         crossDomain: true,
@@ -254,6 +253,8 @@ $(document).ready(function(){
                                     $('#cmpartner_id').val(result[y].profile.partner_id);
                                     $('#cmrole').val(result[y].profile.role);
                                     $('#cmstatus').val(result[y].profile.status);
+                                    $('#cmcch_id').val(result[y].profile.cch_id);
+                                    $('#cmldap_id').val(result[y].profile.ldap_id);
 
                                 }
                             }
@@ -383,13 +384,16 @@ $(document).ready(function(){
                                     $('#cgcity').val(result[y].profile.city);
                                     $('#cgstate').val(result[y].profile.state);
                                     $('#cgzipcode').val(result[y].profile.zipcode);
+                                    $('#cgoffice').val(result[y].profile.phone["office"]);
                                     $('#cgmobile').val(result[y].profile.phone["mobile"]);
-                                    $('#cghome').val(result[y].profile.phone["home"]);
                                     $('#cgrelationship').val(result[y].profile.relationship);
+                                    $('#cgstatus').val(result[y].profile.status);
                                     $('#cgpartner_id').val(result[y].profile.partner_id);
                                     $('#cgrole').val(result[y].profile.role);
                                    // $('#birthdate').val(result[y].profile.birthdate);
                                     $('#member_partner_id').val(result[y].profile.member_partner_id);
+                                    $('#cgcch_id').val(result[y].profile.cch_id);
+                                    $('#cgldap_id').val(result[y].profile.ldap_id);
                                    // $('#status').val(result[y].profile.status);
                                     // $('#effective_date').val(result[y].profile.effective_date);
 
@@ -415,7 +419,155 @@ $(document).ready(function(){
 
 //Guardian Form
 
+//Guardian still in progress in regards to backend api
+
+$(document).ready(function(){
+
+    $('#guardianButton').click(function(e){
+
+        e.preventDefault();
+        $.ajax({
+            url: "https://identity-qa.cch.healthcare:9031/as/token.oauth2?grant_type=password&scope=cloudmineProvisioning&username=csr&password=Unb0undID",
+            type: "POST",
+            dataType: "json",
+            crossDomain: true,
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            headers: {
+                Accept : "application/json; charset=utf-8",
+                Authorization:"Basic Y2xvdWRtaW5lOktRSGg2UEFBTUF2VnVuTzQ2V0tQNjJZNXhqN012ang2N3d0QzBpZ2J5eTdSVXk4bnhzRTBTd1AzTzU3M1UyVWk="
+            },
+            success: function (data) {
+
+                if(data != " "  || null){
+                    $.ajax({
+                        url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
+                        type: "POST",
+                        data : $('#guardianForm').serializeJSON(),
+                        dataType: "json",
+                        crossDomain: true,
+                        headers : {
+                            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'x-cloudmine-apikey' : '0ac9bec7ea0a4d79a92a5e503f3c44b6',
+                            'x-cloudmine-sessiontoken' : data.access_token
+                        },
+                        success: function (response) {
+
+                            alert('Result' +JSON.stringify(response));
+                            console.log("The response is :  " + JSON.stringify(response));
+
+                        }
+
+                    });
+
+                }
+            },
+            error: function(error){
+                console.log(error);
+                alert(error);
+            }
+        });
+    });
+
+});
+
+
+
+
+
+//Guardian search still in progress in regards to backend api
+
+
 //Guardian search
+$(document).ready(function(){
+
+    $('#guardianSearchButton').click(function(e){
+
+        e.preventDefault();
+        $.ajax({
+            url: "https://identity-qa.cch.healthcare:9031/as/token.oauth2?grant_type=password&scope=cloudmineProvisioning&username=csr&password=Unb0undID",
+            type: "POST",
+            dataType: "json",
+            crossDomain: true,
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            headers: {
+                Accept : "application/json; charset=utf-8",
+                Authorization:"Basic Y2xvdWRtaW5lOktRSGg2UEFBTUF2VnVuTzQ2V0tQNjJZNXhqN012ang2N3d0QzBpZ2J5eTdSVXk4bnhzRTBTd1AzTzU3M1UyVWk="
+            },
+            success: function (data) {
+
+                if(data != " "  || null){
+                    $.ajax({
+                        url: "https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user",
+                        type: "GET",
+                        // data : $('#memberSearchForm').val(),
+                        data : $('#guardianSearchForm').serializeJSON(),
+                        dataType: "json",
+                        crossDomain: true,
+                        headers : {
+                            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'x-cloudmine-apikey' : '0ac9bec7ea0a4d79a92a5e503f3c44b6',
+                            'x-cloudmine-sessiontoken' : data.access_token
+                        },
+                        success: function (response) {
+
+                            // $('#display7').html("SEARCH RESULT ==>  " + (JSON.stringify(response.result.message)));
+                            console.log("The response is :  " + JSON.stringify(response));
+
+                            for( x in response){
+                                var result = response[x].message;
+                                for(y in result){
+                                    result[y]
+                                    $('#gdpartner_id').val(result[y].profile.partner_id);
+                                    $('#gdusername').val(result[y].profile.username);
+                                    $('#gdpassword').val(result[y].profile.password);  //disable this
+                                    $('#gdemail').val(result[y].profile.email);
+                                    $('#gdfirst_name').val(result[y].profile.first_name);
+                                    $('#gdlast_name').val(result[y].profile.last_name);
+                                    $('#gdaddress1').val(result[y].profile.address1);
+                                    $('#gdaddress2').val(result[y].profile.address2);
+                                    $('#gdcity').val(result[y].profile.city);
+                                    $('#gdstate').val(result[y].profile.state);
+                                    $('#gdzipcode').val(result[y].profile.zipcode);
+                                    $('#gdoffice').val(result[y].profile.phone["office"]);
+                                    $('#gdmobile').val(result[y].profile.phone["mobile"]);
+                                    $('#gdrelationship').val(result[y].profile.relationship);
+                                    $('#gdstatus').val(result[y].profile.status);
+                                    $('#gdrole').val(result[y].profile.role);
+                                    $('#gdbirthdate').val(result[y].profile.birthdate);
+                                    $('#gdmember_partner_id').val(result[y].profile.member_partner_id);
+                                    $('#gdcch_id').val(result[y].profile.cch_id);
+                                    $('#gdldap_id').val(result[y].profile.ldap_id);
+                                    // $('#status').val(result[y].profile.status);
+                                     $('#gdeffective_date').val(result[y].profile.effective_date);
+
+                                }
+                            }
+
+                        }
+
+                    });
+
+                }
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Tier 1 Form
 
