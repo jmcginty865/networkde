@@ -42,7 +42,7 @@
             <br>
 
             <!-- Member Search -->
-            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="memberSearchForm">
+            <form role="form" id="memberSearchForm">
                 <div class="input-group">
                     <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
                     <div class="input-group-btn">
@@ -54,17 +54,25 @@
             <br>
 
             <!-- Member Form -->
-            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="memberForm">
-                <div id="theform" class="form-group" >
+            <form role="form" id="memberForm">
+                <div class="form-group" >
 
-                    <label for="partner_id">AHC Member ID</label>
-                    <input type="text" class="form-control" id="partner_id" name="partner_id">
-
+                    <div id="changeShipOutputs">
                     <label for="username">Userame:</label>
                     <input type="text" class="form-control"  id="username" name="username">
 
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" id="password" name="password">
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="changeShip"><p id="authlabel">Use Local Auth<p></p></label>
+                    </div>
+
+                    <div id="changeShipInputs">
+                        <label for="partner_id">AHC Member ID</label>
+                        <input type="text" class="form-control" id="partner_id" name="partner_id">
+                    </div>
 
                     <label for="email">Email address:</label>
                     <input type="email" class="form-control" id="email" name="email">
@@ -147,17 +155,55 @@
             <br>
 
             <!-- Care Manager Form -->
+
             <form role="form" id="caremanagerForm">
-                <div class="form-group">
+                <div class="form-group" >
 
-                    <label for="cmpartner_id">AHC Care Manager ID</label>
-                    <input type="text" class="form-control" id="cmpartner_id" name="partner_id">
+                    <!--
 
-                    <label for="cmusername">Userame:</label>
-                    <input type="text" class="form-control"  id="cmusername" name="username">
+                        <form role="form" id="memberForm">
+                <div class="form-group" >
 
-                    <label for="cmpassword">Password:</label>
-                    <input type="password" class="form-control" id="cmpassword" name="password">
+                    <div id="changeShipOutputs">
+                    <label for="username">Userame:</label>
+                    <input type="text" class="form-control"  id="username" name="username">
+
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="changeShip">Local Auth</label>
+                    </div>
+
+                    <div id="changeShipInputs">
+                        <label for="partner_id">AHC Member ID</label>
+                        <input type="text" class="form-control" id="partner_id" name="partner_id">
+                    </div>
+
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+
+                      -->
+
+                    <div id="CMchangeShipOutputs">
+                        <label for="cmusername">Userame:</label>
+                        <input type="text" class="form-control"  id="cmusername" name="username">
+
+                        <label for="cmpassword">Password:</label>
+                        <input type="password" class="form-control" id="cmpassword" name="password">
+                    </div>
+                    <br>
+
+                        <div class="CMcheckbox">
+                            <label><input type="checkbox" id="CMchangeShip">Use Local Auth</label>
+                        </div>
+                    <br>
+                    <div id="CMchangeShipInputs">
+                        <label for="cmpartner_id">AHC Care Manager ID</label>
+                        <input type="text" class="form-control" id="cmpartner_id" name="partner_id">
+                    </div>
+
 
                     <label for="cmemail">Email address:</label>
                     <input type="email" class="form-control" id="cmemail" name="email">

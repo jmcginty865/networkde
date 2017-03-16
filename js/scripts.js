@@ -7,6 +7,82 @@ $(document).ready(function(){
 });
 
 
+//Member Auth checkbox
+
+$(document).ready(function(){
+
+    var form = $('#memberForm');
+    var checkbox = $('#changeShip');
+    var chShipBlock = $('#changeShipInputs');
+    var uandpblock = $('#changeShipOutputs');
+
+    chShipBlock.hide();
+
+    checkbox.on('click', function () {
+        if($(this).is(':checked')){
+
+            chShipBlock.show();
+            chShipBlock.find('input').attr('required', true);
+
+            uandpblock.hide();
+            uandpblock.find('input').attr('required', false);
+
+        }else{
+            chShipBlock.hide();
+            chShipBlock.find('input').attr('required', false);
+
+            uandpblock.show();
+            uandpblock.find('input').attr('required', true);
+        }
+    })
+
+
+});
+
+
+
+
+//Care Manager Auth checkbox
+
+
+$(document).ready(function(){
+
+    var form = $('#caremanagerForm');
+    var CMcheckbox = $('#CMchangeShip');
+    var chShipBlock = $('#CMchangeShipInputs');
+    var uandpblock = $('#CMchangeShipOutputs');
+
+    chShipBlock.hide();
+
+    CMcheckbox.on('click', function () {
+        if($(this).is(':checked')){
+
+            chShipBlock.show();
+            chShipBlock.find('input').attr('required', true);
+
+            uandpblock.hide();
+            uandpblock.find('input').attr('required', false);
+
+        }else{
+            chShipBlock.hide();
+            chShipBlock.find('input').attr('required', false);
+
+            uandpblock.show();
+            uandpblock.find('input').attr('required', true);
+        }
+    })
+
+
+});
+
+
+
+
+
+
+
+
+
 
 //Member Form
 

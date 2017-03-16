@@ -6,3 +6,12 @@
 #main-title{
 	color: white;
 }
+
+#authlabel{
+	font-weight: bold !important;
+}
+
+#CMchangeShip{
+	margin-right: 7px !important;
+
+}
