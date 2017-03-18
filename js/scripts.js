@@ -77,6 +77,35 @@ $(document).ready(function(){
 
 
 
+$(document).ready(function(){
+
+    var form = $('#guardianForm');
+    var Gcheckbox = $('#GchangeShip');
+    var chShipBlock = $('#GchangeShipInputs');
+    var uandpblock = $('#GchangeShipOutputs');
+
+
+    chShipBlock.hide();
+
+    Gcheckbox.on('click', function () {
+        if($(this).is(':checked')){
+
+            chShipBlock.show();
+            chShipBlock.find('input').attr('required', true);
+
+            uandpblock.hide();
+            uandpblock.find('input').attr('required', false);
+
+        }else{
+            chShipBlock.hide();
+            chShipBlock.find('input').attr('required', false);
+
+            uandpblock.show();
+            uandpblock.find('input').attr('required', true);
+        }
+    })
+
+});
 
 
 
@@ -637,14 +666,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
 //Tier 1 Form
 
 //Tier 1 search
@@ -652,8 +673,6 @@ $(document).ready(function(){
 //Tier 2 Form
 
 //Tier 2 search
-
-//oauth delegation or username and password option
 
 
 // SEARCH  (TO DO!!!)

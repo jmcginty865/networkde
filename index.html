@@ -139,6 +139,7 @@
             </form>
         </div>
 
+
         <!-- Care Manager Tab -->
         <div role="tabpanel" class="tab-pane" id="caremanagers">
             <h1>Caremanagers</h1>
@@ -153,6 +154,7 @@
                 </div>
             </form>
             <br>
+
 
             <!-- Care Manager Form -->
 
@@ -217,6 +219,8 @@
                 <button id="caremanagerButton" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
+
 
         <!-- Care Giver Tab -->
         <div role="tabpanel" class="tab-pane" id="caregivers">
@@ -308,6 +312,7 @@
         </div>
 
 
+
         <!-- Guardian Tab -->
         <div role="tabpanel" class="tab-pane" id="guardians">
             <h1>Guardians</h1>
@@ -329,14 +334,26 @@
         <form role="form" id="guardianForm">
             <div class="form-group" >
 
-                <label for="gdpartner_id">AHC Guardian ID</label>
-                <input type="text" class="form-control" id="gdpartner_id" name="partner_id">
-
+                <div id="GchangeShipOutputs">
                 <label for="gdusername">Userame:</label>
                 <input type="text" class="form-control"  id="gdusername" name="username">
 
                 <label for="gdpassword">Password:</label>
                 <input type="gdpassword" class="form-control" id="gdpassword" name="password">
+
+                </div>
+                <br>
+
+                <div class="Gcheckbox">
+                    <label><input type="checkbox" id="GchangeShip">Use Local Auth</label>
+                </div>
+
+                <div id="GchangeShipInputs">
+
+                <label for="gdpartner_id">AHC Guardian ID</label>
+                <input type="text" class="form-control" id="gdpartner_id" name="partner_id">
+                </div>
+
 
                 <label for="gdemail">Email address:</label>
                 <input type="gdemail" class="form-control" id="gdemail" name="email">
@@ -407,10 +424,12 @@
         </form>
     </div>
 
+
         <!-- Tier1 Tab -->
         <div role="tabpanel" class="tab-pane" id="tier1">
             <h1>Tier 1 Support Rep</h1>
             <br>
+
 
     <!-- Tier1 Search -->
     <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="tieroneSearchForm">
@@ -487,7 +506,7 @@
     </form>
 </div>
 
-
+        <!-- Tier2 Tab -->
         <div role="tabpanel" class="tab-pane" id="tier2">
             <h1>Tier 2 Support Rep</h1>
             <br>
