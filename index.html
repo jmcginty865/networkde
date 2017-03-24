@@ -49,6 +49,15 @@
                         <button id="memberSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
+                <!-- <div>
+
+                     <label for="search" id="searchLabel">Search By (select one):</label>
+                     <select class="form-control" id="searchby" name="search">
+                         <option value="partrner_id">PartnerID</option>
+                         <option value="last_name">LastName</option>
+                     </select>
+
+                 </div> -->
             </form>
 
             <br>
@@ -57,14 +66,15 @@
             <form role="form" id="memberForm">
                 <div class="form-group" >
 
-                    <div id="changeShipOutputs">
-                    <label for="username">Userame:</label>
-                    <input type="text" class="form-control"  id="username" name="username">
+                  <!--  <div id="changeShipOutputs"> -->
+                        <label for="username">Userame:</label>
+                        <input type="text" class="form-control"  id="username" name="username">
 
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                    </div>
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" value="Welcome123">
+                  <!--  </div> -->
 
+                    <!--
                     <div class="checkbox">
                         <label><input type="checkbox" id="changeShip"><p id="authlabel">Use Local Auth<p></p></label>
                     </div>
@@ -73,6 +83,10 @@
                         <label for="partner_id">AHC Member ID</label>
                         <input type="text" class="form-control" id="partner_id" name="partner_id">
                     </div>
+                    -->
+
+                    <label for="partner_id">AHC Member ID</label>
+                    <input type="text" class="form-control" id="partner_id" name="partner_id">
 
                     <label for="email">Email address:</label>
                     <input type="email" class="form-control" id="email" name="email">
@@ -99,15 +113,21 @@
                     <input type="text" class="form-control" id="zipcode" name="zipcode">
 
                     <!--<fieldset>-->
-                        <label for="phone">Mobile</label>
-                        <input type="text" class="form-control" id="mobile" name="phone[mobile]">
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="mobile" name="phones[mobile]">
 
-                        <label for="phone">Home</label>
-                        <input type="text" class="form-control" id="home" name="phone[home]">
+                    <label for="phones">Home</label>
+                    <input type="text" class="form-control" id="home" name="phones[home]">
 
-                        <label for="phone">Office</label>
-                        <input type="text" class="form-control" id="office" name="phone[office]">
+                    <label for="phones">Office</label>
+                    <input type="text" class="form-control" id="office" name="phones[office]">
                     <!--</fieldset>-->
+
+                    <label for="tenant_id" id="tenantidLabel">Tenant_ID (select one):</label>
+                    <select class="form-control" id="tenant_id" name="tenant_id">
+                        <option value="AHC">AHC</option>
+                        <option value="KAISER">KAISER</option>
+                    </select>
 
                     <!--<label for="role">Role</label>-->
                     <input type="hidden" class="form-control" id="role" name="role" value="MEMBER">
@@ -131,8 +151,8 @@
                     <label for="cch_id">CCH_ID</label>
                     <input type="text" class="form-control" id="cch_id" name="cch_id" disabled>
 
-                    <label for="ldap_id">LDAP ID</label>
-                    <input type="text" class="form-control" id="ldap_id" name="ldap_id" disabled>
+                    <!--<label for="ldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="ldap_id" name="ldap_id" disabled> -->
 
                 </div>
                 <button id="memberButton" type="submit" class="btn btn-primary">Submit</button>
@@ -159,25 +179,25 @@
             <!-- Care Manager Form -->
 
             <form role="form" id="caremanagerForm">
-                <div class="form-group" >
+               <div class="form-group" >
 
-                    <div id="CMchangeShipOutputs">
+                  <!--  <div class="CMcheckbox"> -->
+                       <!-- <label><input type="checkbox" id="CMchangeShip">Use Local Auth</label> -->
+                   <!-- </div> -->
+                    <br>
+                    <!--<div id="CMchangeShipOutputs"> -->
+                        <label for="cmpartner_id">AHC Care Manager ID</label>
+                        <input type="text" class="form-control" id="cmpartner_id" name="partner_id">
+                    <!--</div>-->
+                    <br>
+                   <!-- <div id="CMchangeShipInputs"> -->
                         <label for="cmusername">Userame:</label>
                         <input type="text" class="form-control"  id="cmusername" name="username">
 
                         <label for="cmpassword">Password:</label>
-                        <input type="password" class="form-control" id="cmpassword" name="password">
-                    </div>
-                    <br>
+                        <input type="password" class="form-control" id="cmpassword" name="password" value="Welcome123">
 
-                        <div class="CMcheckbox">
-                            <label><input type="checkbox" id="CMchangeShip">Use Local Auth</label>
-                        </div>
-                    <br>
-                    <div id="CMchangeShipInputs">
-                        <label for="cmpartner_id">AHC Care Manager ID</label>
-                        <input type="text" class="form-control" id="cmpartner_id" name="partner_id">
-                    </div>
+                    <!--</div> -->
 
 
                     <label for="cmemail">Email address:</label>
@@ -189,17 +209,23 @@
                     <label for="cmlast_name">Lastname</label>
                     <input type="text"  class="form-control" id="cmlast_name" name="last_name">
 
-                    <label for="phone">Office</label>
-                    <input type="text" class="form-control" id="cmoffice" name="phone[office]">
+                    <label for="phones">Office</label>
+                    <input type="text" class="form-control" id="cmoffice" name="phones[office]">
 
-                    <label for="phone">Mobile</label>
-                    <input type="text" class="form-control" id="cmmobile" name="phone[mobile]">
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="cmmobile" name="phones[mobile]">
+
+                   <label for="cmtenant_id" id="cmtenantidLabel">Tenant_ID (select one):</label>
+                   <select class="form-control" id="cmtenant_id" name="tenant_id">
+                       <option value="AHC">AHC</option>
+                       <option value="KAISER">KAISER</option>
+                   </select>
 
                     <label for="cmzipcode">Zipcode</label>
                     <input type="text" class="form-control" id="cmzipcode" name="zipcode">
 
-                   <!-- <label for="cmrole">Role</label>
-                    <input type="text" class="form-control" id="cmrole" name="role"> -->
+                    <!-- <label for="cmrole">Role</label>
+                     <input type="text" class="form-control" id="cmrole" name="role"> -->
                     <input type="hidden" class="form-control" id="cmrole" name="role" value="CAREMANAGER">
 
                     <label for="status" id="cmstatuslabel">Status (select one):</label>
@@ -209,11 +235,14 @@
                         <option value="inactive">Inactive</option>
                     </select>
 
+                   <label for="cmeffective_date">Effective Date</label>
+                   <input type="date" class="form-control" id="cmeffective_date" name="effective_date">
+
                     <label for="cmcch_id">CCH_ID</label>
                     <input type="text" class="form-control" id="cmcch_id" name="cch_id" disabled>
 
-                    <label for="cmldap_id">LDAP ID</label>
-                    <input type="text" class="form-control" id="cmldap_id" name="ldap_id" disabled>
+                    <!--<label for="cmldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="cmldap_id" name="ldap_id" disabled> -->
 
                 </div>
                 <button id="caremanagerButton" type="submit" class="btn btn-primary">Submit</button>
@@ -249,7 +278,7 @@
                     <input type="email" class="form-control" id="cgemail" name="email">
 
                     <label for="cgpassword">Password:</label>
-                    <input type="password" class="form-control" id="cgpassword" name="password">
+                    <input type="password" class="form-control" id="cgpassword" name="password" value="Welcome123">
 
                     <label for="cgfullname">Fullame:</label>
                     <input type="text" class="form-control"  id="cgfullname" name="full_name">
@@ -276,18 +305,22 @@
                     <label for="cgzipcode">Zipcode</label>
                     <input type="text" class="form-control" id="cgzipcode" name="zipcode">
 
-                    <label for="phone">Home</label>
-                    <input type="text" class="form-control" id="cgoffice" name="phone[office]">
+                    <label for="phones">Home</label>
+                    <input type="text" class="form-control" id="cgoffice" name="phones[office]">
 
-                    <label for="phone">Mobile</label>
-                    <input type="text" class="form-control" id="cgmobile" name="phone[mobile]">
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="cgmobile" name="phones[mobile]">
 
-
+                    <label for="cgtenant_id" id="cgtenantidLabel">Tenant_ID (select one):</label>
+                    <select class="form-control" id="cgtenant_id" name="tenant_id">
+                        <option value="AHC">AHC</option>
+                        <option value="KAISER">KAISER</option>
+                    </select>
                     <label for="cgrelationship">Relationship</label>
                     <input type="tel" class="form-control" id="cgrelationship" name="relationship">
 
-                   <!-- <label for="cgrole">Role</label>
-                    <input type="text" class="form-control" id="cgrole" name="role"> -->
+                    <!-- <label for="cgrole">Role</label>
+                     <input type="text" class="form-control" id="cgrole" name="role"> -->
                     <input type="hidden" class="form-control" id="cgrole" name="role" value="CAREGIVER">
 
                     <label for="status" id="cgstatuslabel">Status (select one):</label>
@@ -296,6 +329,8 @@
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
                     </select>
+                    <label for="cgeffective_date">Effective Date</label>
+                    <input type="date" class="form-control" id="cgeffective_date" name="effective_date">
 
                     <label for="member_partner_id">AHC Member ID</label>
                     <input type="text" class="form-control" id="member_partner_id" name="member_partner_id">
@@ -303,8 +338,8 @@
                     <label for="cgcch_id">CCH_ID</label>
                     <input type="text" class="form-control" id="cgcch_id" name="cch_id" disabled>
 
-                    <label for="cgldap_id">LDAP ID</label>
-                    <input type="text" class="form-control" id="cgldap_id" name="ldap_id" disabled>
+                   <!-- <label for="cgldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="cgldap_id" name="ldap_id" disabled> -->
 
                 </div>
                 <button id="caregiverButton" type="submit" class="btn btn-primary">Submit</button>
@@ -318,111 +353,111 @@
             <h1>Guardians</h1>
             <br>
 
-        <!-- Guardian Search -->
-        <form role="form" id="guardianSearchForm">
-            <div class="input-group">
-                <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
-                <div class="input-group-btn">
-                    <button id="guardianSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            <!-- Guardian Search -->
+            <form role="form" id="guardianSearchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
+                    <div class="input-group-btn">
+                        <button id="guardianSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
-        <br>
+            <br>
 
-        <!-- Guardian Form -->
-        <form role="form" id="guardianForm">
-            <div class="form-group" >
+            <!-- Guardian Form -->
+            <form role="form" id="guardianForm">
+                <div class="form-group" >
 
-                <div id="GchangeShipOutputs">
-                <label for="gdusername">Userame:</label>
-                <input type="text" class="form-control"  id="gdusername" name="username">
+                    <div id="GchangeShipOutputs">
+                        <label for="gdusername">Userame:</label>
+                        <input type="text" class="form-control"  id="gdusername" name="username">
 
-                <label for="gdpassword">Password:</label>
-                <input type="gdpassword" class="form-control" id="gdpassword" name="password">
+                        <label for="gdpassword">Password:</label>
+                        <input type="gdpassword" class="form-control" id="gdpassword" name="password">
+
+                    </div>
+                    <br>
+
+                    <div class="Gcheckbox">
+                        <label><input type="checkbox" id="GchangeShip">Use Local Auth</label>
+                    </div>
+
+                    <div id="GchangeShipInputs">
+
+                        <label for="gdpartner_id">AHC Guardian ID</label>
+                        <input type="text" class="form-control" id="gdpartner_id" name="partner_id">
+                    </div>
+
+
+                    <label for="gdemail">Email address:</label>
+                    <input type="gdemail" class="form-control" id="gdemail" name="email">
+
+                    <label for="gdfirst_name">Firstname</label>
+                    <input type="text" class="form-control" id="gdfirst_name" name="first_name">
+
+                    <label for="gdlast_name">Lastname</label>
+                    <input type="text"  class="form-control" id="gdlast_name" name="last_name">
+
+                    <label for="gdaddress1">Address1</label>
+                    <input type="text" class="form-control" id="gdaddress1" name="address1">
+
+                    <label for="gdaddress2">Address2</label>
+                    <input type="text" class="form-control" id="gdaddress2" name="address2">
+
+                    <label for="gdcity">City</label>
+                    <input type="text" class="form-control" id="gdcity" name="city">
+
+                    <label for="gdstate">State</label>
+                    <input type="text" class="form-control" id="gdstate" name="state">
+
+                    <label for="gdzipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="gdzipcode" name="zipcode">
+
+                    <!--<fieldset>-->
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="gdmobile" name="phones[mobile]">
+
+                    <label for="phones">Home</label>
+                    <input type="text" class="form-control" id="gdhome" name="phones[home]">
+
+                    <label for="phones">Office</label>
+                    <input type="text" class="form-control" id="gdoffice" name="phones[office]">
+                    <!--</fieldset>-->
+
+
+                    <!--<label for="role">Role</label>-->
+                    <input type="hidden" class="form-control" id="gdrole" name="role" value="GUARDIAN">
+
+                    <label for="gdbirthdate">Birth Date</label>
+                    <input type="date" class="form-control" id="gdbirthdate" name="birthdate">
+
+                    <label for="gdcare_manager">AHC Care Manager ID</label>
+                    <input type="text" class="form-control" id="gdcare_manager" name="care_manager">
+
+                    <label for="status" id="gdstatuslabel">Status (select one):</label>
+                    <!-- <input type="text" class="form-control" id="status" name="status" value="active"> -->
+                    <select class="form-control" id="gdstatus" name="status">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+
+                    <label for="gdeffective_date">Effective Date</label>
+                    <input type="date" class="form-control" id="gdeffective_date" name="effective_date">
+
+                    <label for="gdmember_partner_id">AHC Member ID</label>
+                    <input type="text" class="form-control" id="gdmember_partner_id" name="member_partner_id">
+
+                    <label for="gdcch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="gdcch_id" name="cch_id" disabled>
+
+                  <!--  <label for="gdldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="gdldap_id" name="ldap_id" disabled> -->
 
                 </div>
-                <br>
-
-                <div class="Gcheckbox">
-                    <label><input type="checkbox" id="GchangeShip">Use Local Auth</label>
-                </div>
-
-                <div id="GchangeShipInputs">
-
-                <label for="gdpartner_id">AHC Guardian ID</label>
-                <input type="text" class="form-control" id="gdpartner_id" name="partner_id">
-                </div>
-
-
-                <label for="gdemail">Email address:</label>
-                <input type="gdemail" class="form-control" id="gdemail" name="email">
-
-                <label for="gdfirst_name">Firstname</label>
-                <input type="text" class="form-control" id="gdfirst_name" name="first_name">
-
-                <label for="gdlast_name">Lastname</label>
-                <input type="text"  class="form-control" id="gdlast_name" name="last_name">
-
-                <label for="gdaddress1">Address1</label>
-                <input type="text" class="form-control" id="gdaddress1" name="address1">
-
-                <label for="gdaddress2">Address2</label>
-                <input type="text" class="form-control" id="gdaddress2" name="address2">
-
-                <label for="gdcity">City</label>
-                <input type="text" class="form-control" id="gdcity" name="city">
-
-                <label for="gdstate">State</label>
-                <input type="text" class="form-control" id="gdstate" name="state">
-
-                <label for="gdzipcode">Zipcode</label>
-                <input type="text" class="form-control" id="gdzipcode" name="zipcode">
-
-                <!--<fieldset>-->
-                <label for="phone">Mobile</label>
-                <input type="text" class="form-control" id="gdmobile" name="phone[mobile]">
-
-                <label for="phone">Home</label>
-                <input type="text" class="form-control" id="gdhome" name="phone[home]">
-
-                <label for="phone">Office</label>
-                <input type="text" class="form-control" id="gdoffice" name="phone[office]">
-                <!--</fieldset>-->
-
-
-                <!--<label for="role">Role</label>-->
-                <input type="hidden" class="form-control" id="gdrole" name="role" value="GUARDIAN">
-
-                <label for="gdbirthdate">Birth Date</label>
-                <input type="date" class="form-control" id="gdbirthdate" name="birthdate">
-
-                <label for="gdcare_manager">AHC Care Manager ID</label>
-                <input type="text" class="form-control" id="gdcare_manager" name="care_manager">
-
-                <label for="status" id="gdstatuslabel">Status (select one):</label>
-                <!-- <input type="text" class="form-control" id="status" name="status" value="active"> -->
-                <select class="form-control" id="gdstatus" name="status">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-
-                <label for="gdeffective_date">Effective Date</label>
-                <input type="date" class="form-control" id="gdeffective_date" name="effective_date">
-
-                <label for="gdmember_partner_id">AHC Member ID</label>
-                <input type="text" class="form-control" id="gdmember_partner_id" name="member_partner_id">
-
-                <label for="gdcch_id">CCH_ID</label>
-                <input type="text" class="form-control" id="gdcch_id" name="cch_id" disabled>
-
-                <label for="gdldap_id">LDAP ID</label>
-                <input type="text" class="form-control" id="gdldap_id" name="ldap_id" disabled>
-
-            </div>
-            <button id="guardianButton" type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+                <button id="guardianButton" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 
 
         <!-- Tier1 Tab -->
@@ -431,80 +466,58 @@
             <br>
 
 
-    <!-- Tier1 Search -->
-    <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="tieroneSearchForm">
-        <div class="input-group">
-            <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
-            <div class="input-group-btn">
-                <button id="tieroneSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
+            <!-- Tier1 Search -->
+            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user?search=" method="GET" role="form" id="tieroneSearchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="search for example by: cch_id='xxx-xxxxx-xxxx' OR partner_id='xxxxxx' etc..">
+                    <div class="input-group-btn">
+                        <button id="tieroneSearchButton" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+
+            <!-- Tier1 Form -->
+            <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="tieroneForm">
+                <div class="form-group" >
+
+                    <label for="t1username">Userame:</label>
+                    <input type="text" class="form-control"  id="t1username" name="username">
+
+                    <label for="t1password">Password:</label>
+                    <input type="t1password" class="form-control" id="t1password" name="password">
+
+                    <label for="t1email">Email address:</label>
+                    <input type="t1email" class="form-control" id="t1email" name="email">
+
+                    <label for="t1first_name">Firstname</label>
+                    <input type="text" class="form-control" id="t1first_name" name="first_name">
+
+                    <label for="t1last_name">Lastname</label>
+                    <input type="text"  class="form-control" id="t1last_name" name="last_name">
+                    <!--<fieldset>-->
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="t1mobile" name="phones[t1mobile]">
+
+                    <label for="phones">Office</label>
+                    <input type="text" class="form-control" id="t1office" name="phones[t1office]">
+                    <!--</fieldset>-->
+
+                    <!--<label for="role">Role</label>-->
+                    <input type="hidden" class="form-control" id="t1role" name="role" value="TIER1SUPPORT">
+
+                    <label for="t1cch_id">CCH_ID</label>
+                    <input type="text" class="form-control" id="t1cch_id" name="cch_id" disabled>
+
+                    <!-- <label for="t1ldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="t1ldap_id" name="ldap_id" disabled> -->
+
+                </div>
+                <button id="tieroneButton" type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-    </form>
-
-    <br>
-
-
-    <!-- Tier1 Form -->
-    <form action="https://api.secure.cloudmine.me/v1/app/96fc95210061884d1aab3e4204ff3a1e/run/user" method="POST" role="form" id="tieroneForm">
-        <div class="form-group" >
-
-            <label for="t1username">Userame:</label>
-            <input type="text" class="form-control"  id="t1username" name="username">
-
-            <label for="t1password">Password:</label>
-            <input type="t1password" class="form-control" id="t1password" name="password">
-
-            <label for="t1email">Email address:</label>
-            <input type="t1email" class="form-control" id="t1email" name="email">
-
-            <label for="t1first_name">Firstname</label>
-            <input type="text" class="form-control" id="t1first_name" name="first_name">
-
-            <label for="t1last_name">Lastname</label>
-            <input type="text"  class="form-control" id="t1last_name" name="last_name">
-
-            <label for="t1address1">Addres1</label>
-            <input type="text" class="form-control" id="t1address1" name="address1">
-
-            <label for="t1address2">Addres2</label>
-            <input type="text" class="form-control" id="t1address2" name="address2">
-
-            <label for="t1city">City</label>
-            <input type="text" class="form-control" id="t1city" name="city">
-
-            <label for="t1state">State</label>
-            <input type="text" class="form-control" id="t1state" name="state">
-
-            <label for="t1zipcode">Zipcode</label>
-            <input type="text" class="form-control" id="t1zipcode" name="zipcode">
-
-            <!--<fieldset>-->
-            <label for="phone">Mobile</label>
-            <input type="text" class="form-control" id="t1mobile" name="phone[t1mobile]">
-
-            <label for="phone">Home</label>
-            <input type="text" class="form-control" id="t1home" name="phone[t1home]">
-
-            <label for="phone">Office</label>
-            <input type="text" class="form-control" id="t1office" name="phone[t1office]">
-            <!--</fieldset>-->
-
-            <!--<label for="role">Role</label>-->
-            <input type="hidden" class="form-control" id="t1role" name="role" value="TIER1SUPPORT">
-
-            <label for="t1birthdate">Birth Date</label>
-            <input type="date" class="form-control" id="t1birthdate" name="birthdate">
-
-            <label for="t1cch_id">CCH_ID</label>
-            <input type="text" class="form-control" id="t1cch_id" name="cch_id" disabled>
-
-            <label for="t1ldap_id">LDAP ID</label>
-            <input type="text" class="form-control" id="t1ldap_id" name="ldap_id" disabled>
-
-        </div>
-        <button id="tieroneButton" type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
 
         <!-- Tier2 Tab -->
         <div role="tabpanel" class="tab-pane" id="tier2">
@@ -532,7 +545,7 @@
                     <input type="text" class="form-control"  id="t2username" name="username">
 
                     <label for="t2password">Password:</label>
-                    <input type="t2password" class="form-control" id="t2password" name="password">
+                    <input type="t1password" class="form-control" id="t2password" name="password">
 
                     <label for="t2email">Email address:</label>
                     <input type="t2email" class="form-control" id="t2email" name="email">
@@ -542,53 +555,37 @@
 
                     <label for="t2last_name">Lastname</label>
                     <input type="text"  class="form-control" id="t2last_name" name="last_name">
-
-                    <label for="t2address1">Addres1</label>
-                    <input type="text" class="form-control" id="t2address1" name="address1">
-
-                    <label for="t2address2">Addres2</label>
-                    <input type="text" class="form-control" id="t2address2" name="address2">
-
-                    <label for="t2city">City</label>
-                    <input type="text" class="form-control" id="t2city" name="city">
-
-                    <label for="t2state">State</label>
-                    <input type="text" class="form-control" id="t2state" name="state">
-
-                    <label for="t2zipcode">Zipcode</label>
-                    <input type="text" class="form-control" id="t2zipcode" name="zipcode">
-
                     <!--<fieldset>-->
-                    <label for="phone">Mobile</label>
-                    <input type="text" class="form-control" id="t2mobile" name="phone[t2mobile]">
+                    <label for="phones">Mobile</label>
+                    <input type="text" class="form-control" id="t2mobile" name="phones[t2mobile]">
 
-                    <label for="phone">Home</label>
-                    <input type="text" class="form-control" id="t2home" name="phone[t2home]">
-
-                    <label for="phone">Office</label>
-                    <input type="text" class="form-control" id="t2office" name="phone[t2office]">
+                    <label for="phones">Office</label>
+                    <input type="text" class="form-control" id="t2office" name="phones[t2office]">
                     <!--</fieldset>-->
 
                     <!--<label for="role">Role</label>-->
                     <input type="hidden" class="form-control" id="t2role" name="role" value="TIER2SUPPORT">
 
-                    <label for="t2birthdate">Birth Date</label>
-                    <input type="date" class="form-control" id="t2birthdate" name="birthdate">
-
                     <label for="t2cch_id">CCH_ID</label>
                     <input type="text" class="form-control" id="t2cch_id" name="cch_id" disabled>
 
-                    <label for="t2ldap_id">LDAP ID</label>
-                    <input type="text" class="form-control" id="t2ldap_id" name="ldap_id" disabled>
+                   <!-- <label for="t2ldap_id">LDAP ID</label>
+                    <input type="text" class="form-control" id="t2ldap_id" name="ldap_id" disabled> -->
 
                 </div>
                 <button id="tiertwoButton" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
-<!----If needed add more tabs here -->
+        <!----If needed add more tabs here -->
 
-</div>
+
+
+
+
+        <!----If needed tabs end here -->
+
+    </div>
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
