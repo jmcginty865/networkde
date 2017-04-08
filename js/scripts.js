@@ -222,10 +222,10 @@ $(document).ready(function(){
                                     $('#home').val(result[y].profile.phones["home"]);
                                     $('#office').val(result[y].profile.phones["office"]);
                                     $('#tenant_id').val(result[y].profile.tenant_id);
-                                    $('#partner_id').val(result[y].profile.partner_id);
+                                    $('#external_id').val(result[y].profile.external_id);
                                     $('#role').val(result[y].profile.role);
                                     $('#birthdate').val(result[y].profile.birthdate);
-                                    $('#care_manager').val(result[y].profile.care_manager);
+                                    $('#caremanager_external_id').val(result[y].profile.caremanager_external_id);
                                    // $('#statuslabel').hide();
                                    // $('#status').hide();
                                    // $("#status_display").val(result[y].profile.status);
@@ -359,7 +359,7 @@ $(document).ready(function(){
                                     $('#cmoffice').val(result[y].profile.phones["office"]);
                                     $('#cmmobile').val(result[y].profile.phones["mobile"]);
                                     $('#cmtenant_id').val(result[y].profile.tenant_id);
-                                    $('#cmpartner_id').val(result[y].profile.partner_id);
+                                    $('#cmexternal_id').val(result[y].profile.external_id);
                                     $('#cmrole').val(result[y].profile.role);
                                     $('#cmstatus').val(result[y].profile.status);
                                     $('#cmeffective_date').val(result[y].profile.effective_date);
