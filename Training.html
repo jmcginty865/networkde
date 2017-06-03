@@ -246,10 +246,9 @@
     <br>
     <div class="row slideanim">
         <div class="col-sm-4">
-            <div class = "clickFirst">
-                <button id ="organizer"><span class="glyphicon glyphicon-user logo"></span></button>
+            <button class ="organizer"><span class="glyphicon glyphicon-user logo"></span></button>
             <h2>Organizer Training Videos</h2>
-            </div>
+
         </div>
         <div class="col-sm-4">
             <button id ="volunteer"><span class="glyphicon glyphicon-hand-up logo"></span></button>
@@ -294,7 +293,12 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 
         });
 
-        $("")
+        $(".volunteer").click(function(){
+            $('html,body'.animate({
+              scrollTop: $(".volunteerVideos").offset().top},
+                'slow'));
+        });
+
 
         $(window).scroll(function() {
             $(".slideanim").each(function(){
@@ -309,9 +313,32 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     })
 </script>
 
-<div class = "volunteerVideos">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/KgHYPiS6Fno" frameborder="0" allowfullscreen></iframe>
+<br>
+
+<div class = "volunteerVideo">
+    <div class="row slideanim">
+        <div class="col-sm-4">
+            <iframe width="350" height="300" src="https://www.youtube.com/embed/KgHYPiS6Fno" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="350" height="300" src="https://www.youtube.com/embed/bMfKVeX5m44" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="350" height="300" src="https://www.youtube.com/embed/31aNNd1j-6g" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
+<br>
+<br>
+
+
+
+<div class = "volunteerVideos">
+
+</div>
+
+
+
 
 <footer class="container-fluid text-center">
     <a href="#myPage" title="To Top">
