@@ -500,11 +500,11 @@ $(document).ready(function(){
                                     $('#cgtenant_id').val(result[y].profile.tenant_id);
                                     $('#cgrelationship').val(result[y].profile.relationship);
                                     $('#cgstatus').val(result[y].profile.status);
-                                    $('#cgpartner_id').val(result[y].profile.partner_id);
+                                    $('#cgexternal_id').val(result[y].profile.external_id);
                                     $('#cgrole').val(result[y].profile.role);
                                    // $('#birthdate').val(result[y].profile.birthdate);
                                     $('#cgeffective_date').val(result[y].profile.effective_date);
-                                    $('#member_partner_id').val(result[y].profile.member_partner_id);
+                                    $('#member_external_id').val(result[y].profile.member_external_id);
                                     $('#cgcch_id').val(result[y].profile.cch_id);
                                    // $('#cgldap_id').val(result[y].profile.ldap_id);
                                    // $('#status').val(result[y].profile.status);
@@ -942,4 +942,20 @@ $(document).ready(function(){
 });
 
 
-// SEARCH  (TO DO!!!)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// User Status 
+
+

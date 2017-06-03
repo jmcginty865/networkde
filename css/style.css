@@ -1,10 +1,17 @@
-.jumbotron{background-color: #337ab7!important;}
-.btn btn-primary{
-	color: #337ab7 !important;
+.jumbotron{
+	background-color: #ffe486!important;
+
+
 }
 
 #main-title{
-	color: white;
+	color: #337ab7 !important;
+	text-align: center !important;
+}
+
+a.btn.btn-primary{
+	color: #FFF !important;
+	height: 70px !important;
 }
 
 #authlabel{
@@ -19,3 +26,7 @@
 #GchangeShip{
 	margin-right: 7px !important;
 }
+
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
