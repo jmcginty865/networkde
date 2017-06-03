@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"
-            type="text/javascript"></script>
+   
 
     <style>
         body {
@@ -144,11 +143,25 @@
             border-color: transparent;
             color: #fff !important;
         }
+        .jumbotron{
+            background-color:#588c9f;
+            height: 100px;
+            margin-bottom: -10px;
+        }
+        #gform{
+    
+            height: 5px;
+     
+            
+        }
+        #gform button.btn.btn-default{
+            color:#588c9f;
+        }
         #tagline{
             padding: 20px;
         }
         #googleMap{
-            margin-bottom: 10px;
+           
         }
         .glyphicon {
             position: relative;
@@ -221,32 +234,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">DE ~ Volunteer ~ Portal</a>
+            <a class="navbar-brand" href="index.html"><img src="img/NetworkDelawareBlueLogo.png" alt="DE~ Volunteer~ Portal" style="width:200px;height:50px;">
+</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+       <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#portfolio">TRAINNING</a></li>
-                <li><a href="#pricing">VIDEOS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                 <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="donor.html">DONATE</a></li>
+                <li><a href="volunteer.html">VOLUNTEER</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                 <li><a href="orgarnize.html">ORGANIZE</a></li>
+                <li><a href="training.html">TRAINING</a></li>
+                <li><a href="stats.html">STATISTICS</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <br>
-<!--<div class="jumbotron text-center">
-    <h1>Company</h1>
-    <p>We specialize in blablabla</p>
-    <form>
-        <div class="input-group">
-            <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">Subscribe</button>
-            </div>
-        </div>
-    </form>
-</div> -->
 
 
 
@@ -258,148 +263,103 @@
 
 
       <br>
-      <div class="row slideanim">
+     <!-- <div class="row slideanim">-->
           <div class="col-sm-4">
               <span class="glyphicon glyphicon-user logo"></span>
-              <h2>Organize</h2>
+               <h2><a href=" orgarnize.html">Organize</a></h2>
           </div>
           <div class="col-sm-4">
               <span class="glyphicon glyphicon-hand-up logo"></span>
-              <h2>Volunteer</h2>
+              <h2><a href=" volunteer.html">Volunteer</a></h2>
           </div>
           <div class="col-sm-4">
               <span class="glyphicon glyphicon-gift logo"></span>
-              <h2>Donate</h2>
+               <h2><a href=" donor.html">Donate</a></h2>
           </div>
       </div>
-      <br><br>
+      
+    <br>
+    
+    
+    <div class="jumbotron text-center">
+    
+     <form class="form-inline">
+    <div id="gform">
+  <div class="form-group">
+    <label for="text">Enter your zipcode:</label>
+    <input type="text" class="form-control" id="zipcode">
   </div>
-
-
-
-
-
-  <!-- Container (Pricing Section)
-  <div id="pricing" class="container-fluid">
-      <div class="text-center">
-          <h2>Pricing</h2>
-          <h4>Choose a payment plan that works for you</h4>
-      </div>
-      <div class="row slideanim">
-          <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                  <div class="panel-heading">
-                      <h1>Basic</h1>
-                  </div>
-                  <div class="panel-body">
-                      <p><strong>20</strong> Lorem</p>
-                      <p><strong>15</strong> Ipsum</p>
-                      <p><strong>5</strong> Dolor</p>
-                      <p><strong>2</strong> Sit</p>
-                      <p><strong>Endless</strong> Amet</p>
-                  </div>
-                  <div class="panel-footer">
-                      <h3>$19</h3>
-                      <h4>per month</h4>
-                      <button class="btn btn-lg">Sign Up</button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                  <div class="panel-heading">
-                      <h1>Pro</h1>
-                  </div>
-                  <div class="panel-body">
-                      <p><strong>50</strong> Lorem</p>
-                      <p><strong>25</strong> Ipsum</p>
-                      <p><strong>10</strong> Dolor</p>
-                      <p><strong>5</strong> Sit</p>
-                      <p><strong>Endless</strong> Amet</p>
-                  </div>
-                  <div class="panel-footer">
-                      <h3>$29</h3>
-                      <h4>per month</h4>
-                      <button class="btn btn-lg">Sign Up</button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                  <div class="panel-heading">
-                      <h1>Premium</h1>
-                  </div>
-                  <div class="panel-body">
-                      <p><strong>100</strong> Lorem</p>
-                      <p><strong>50</strong> Ipsum</p>
-                      <p><strong>25</strong> Dolor</p>
-                      <p><strong>10</strong> Sit</p>
-                      <p><strong>Endless</strong> Amet</p>
-                  </div>
-                  <div class="panel-footer">
-                      <h3>$49</h3>
-                      <h4>per month</h4>
-                      <button class="btn btn-lg">Sign Up</button>
-                  </div>
-              </div>
-          </div>
-      </div>
+  <div class="form-group">
+    <label for="miles">Radius in miles:</label>
+    <input type="text" class="form-control" id="miles">
   </div>
-  -->
+  <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+</form>
+    
+</div> 
+
+<div id="map" style="width: 100%; height: 500px; alignment: "></div>
+
+<script>
+    function disableScrollingWithMouseWheel() {
+    map.setOptions({ scrollwheel: false });
+}
 
 
-<!-- Add Google Maps -->
-<!--<div id="googleMap" style="height:500px;width:100%;"></div>-->
-<!--<script>-->
-    <!--function myMap() {-->
-        <!--var myCenter = new google.maps.LatLng(39.7490337,-75.5484009);-->
+   function initMap() {
 
-        <!--var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};-->
-        <!--var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);-->
-        <!--var marker = new google.maps.Marker({position:myCenter});-->
-        <!--marker.setMap(map);-->
-    <!--}-->
-<!--</script>-->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiUVofWdv8kaTGOMn8ExjSu1qO3xxwWto&callback=myMap"></script>
+       var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: {lat:39.7391, lng: -75.5398},
+        });
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-
-<div id="map" style="width: 100%; height: 500px;"></div>
-
-<script type="text/javascript">
-    var locations = [
-        ['Stadtbibliothek Zanklhof', 47.06976, 15.43154, 1],
-        ['Stadtbibliothek dieMediathek', 47.06975, 15.43116, 2],
-        ['Stadtbibliothek Gösting', 47.09399, 15.40548, 3],
-        ['Stadtbibliothek Graz West', 47.06993, 15.40727, 4],
-        ['Stadtbibliothek Graz Ost', 47.06934, 15.45888, 5],
-        ['Stadtbibliothek Graz Süd', 47.04572, 15.43234, 6],
-        ['Stadtbibliothek Graz Nord', 47.08350, 15.43212, 7],
-        ['Stadtbibliothek Andritz', 47.10280, 15.42137, 8]
-    ];
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: new google.maps.LatLng(47.071876, 15.441456),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
+        var markers = locations.map(function(location, i) {
+            return new google.maps.Marker({
+                position: location,
+                label: labels[i % labels.length]
+            });
         });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
+       // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+       
+       
+       
+       
     }
+
+
+    var locations = [
+        {lat:39.747591, lng:-75.547298},
+        {lat:39.743236, lng:-75.551463},
+        {lat:39.811145, lng:-75.554634},
+        {lat:39.741675, lng:-75.546317},
+        {lat:39.629433, lng:-75.745601},
+        {lat:39.802654, lng:-75.465481},
+        {lat:39.714285, lng:-75.594332},
+        {lat:38.648760, lng:-75.624884},
+        {lat:39.757818, lng:-75.606784},
+        {lat:39.740084, lng:-75.632837},
+        {lat:39.746716, lng:-75.546323},
+        {lat:39.765995, lng:-75.540802},
+        {lat:39.745181, lng:-75.547516},
+        {lat:39.683489, lng:-75.751900},
+        {lat:38.614085, lng:-75.202965},
+        {lat:39.751476, lng:-75.543523},
+        {lat:39.662916, lng:-75.750787},
+        {lat:39.745917, lng:-75.548781},
+        {lat:39.667799, lng:-75.701550}
+    ]
+    //(4) make sure you have all the following scripts imported in the page
+</script>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATUeZx4Lx57ox5QL3lp17g4Rty-YqoXVA&callback=initMap">
 </script>
 
 
@@ -425,26 +385,21 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
                 event.preventDefault();
-
                 // Store hash
                 var hash = this.hash;
-
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 500, function(){
-
                     // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
                 });
             } // End if
         });
-
         $(window).scroll(function() {
             $(".slideanim").each(function(){
                 var pos = $(this).offset().top;
-
                 var winTop = $(window).scrollTop();
                 if (pos < winTop + 600) {
                     $(this).addClass("slide");
@@ -454,100 +409,13 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     })
 </script>
     
-     <form role="form" id="memberForm">
-                <div class="form-group" >
+     
 
-                  <!--  <div id="changeShipOutputs"> -->
-                        <label for="username">Userame:</label>
-                        <input type="text" class="form-control"  id="username" name="username">
+<script type="text/javascript" src="js/jquery.serializejson.js"></script>
 
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password" value="Welcome123">
-                  <!--  </div> -->
+<!-- Latest compiled and minified JavaScript -->
 
-                    <!--
-                    <div class="checkbox">
-                        <label><input type="checkbox" id="changeShip"><p id="authlabel">Use Local Auth<p></p></label>
-                    </div>
-                    <div id="changeShipInputs">
-                        <label for="partner_id">AHC Member ID</label>
-                        <input type="text" class="form-control" id="partner_id" name="partner_id">
-                    </div>
-                    -->
 
-                    <label for="external_id">AHC Member ID</label>
-                    <input type="text" class="form-control" id="external_id" name="external_id">
-
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email">
-
-                    <label for="first_name">Firstname</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name">
-
-                    <label for="last_name">Lastname</label>
-                    <input type="text"  class="form-control" id="last_name" name="last_name">
-
-                    <label for="address1">Address1</label>
-                    <input type="text" class="form-control" id="address1" name="address1">
-
-                    <label for="address2">Address2</label>
-                    <input type="text" class="form-control" id="address2" name="address2">
-
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city">
-
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" name="state">
-
-                    <label for="zipcode">Zipcode</label>
-                    <input type="text" class="form-control" id="zipcode" name="zipcode">
-
-                    <!--<fieldset>-->
-                    <label for="phones">Mobile</label>
-                    <input type="text" class="form-control" id="mobile" name="phones[mobile]">
-
-                    <label for="phones">Home</label>
-                    <input type="text" class="form-control" id="home" name="phones[home]">
-
-                    <label for="phones">Office</label>
-                    <input type="text" class="form-control" id="office" name="phones[office]">
-                    <!--</fieldset>-->
-
-                    <label for="tenant_id" id="tenantidLabel">Tenant_ID (select one):</label>
-                    <select class="form-control" id="tenant_id" name="tenant_id">
-                        <option value="AHC">AHC</option>
-                        <option value="KAISER">KAISER</option>
-                    </select>
-
-                    <!--<label for="role">Role</label>-->
-                    <input type="hidden" class="form-control" id="role" name="role" value="MEMBER">
-
-                    <label for="birthdate">Birth Date</label>
-                    <input type="date" class="form-control" id="birthdate" name="birthdate">
-
-                    <label for="caremanager_external_id">AHC Care Manager ID</label>
-                    <input type="text" class="form-control" id="caremanager_external_id" name="caremanager_external_id">
-
-                    <label for="status" id="statuslabel">Status (select one):</label>
-                    <!-- <input type="text" class="form-control" id="status" name="status" value="active"> -->
-                    <select class="form-control" id="status" name="status">
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-
-                    <label for="effective_date">Effective Date</label>
-                    <input type="date" class="form-control" id="effective_date" name="effective_date">
-
-                    <label for="cch_id">CCH_ID</label>
-                    <input type="text" class="form-control" id="cch_id" name="cch_id" disabled>
-
-                    <!--<label for="ldap_id">LDAP ID</label>
-                    <input type="text" class="form-control" id="ldap_id" name="ldap_id" disabled> -->
-
-                </div>
-                <button id="memberButton" type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-
+<script src="js/scripts.js"></script>
 </body>
 </html>
