@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81110275-3fa8-4106-9747-9b5d8233ca4a" name="Default" comment="" />
+    <list default="true" id="81110275-3fa8-4106-9747-9b5d8233ca4a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources.html" afterPath="$PROJECT_DIR$/Resources.html" />
+    </list>
     <ignored path="bootstrap.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -32,8 +34,8 @@
       <file leaf-file-name="Training.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Training.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="268" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="360" selection-end-column="7" />
+            <state relative-caret-position="353">
+              <caret line="330" column="4" lean-forward="true" selection-start-line="315" selection-start-column="0" selection-end-line="330" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -42,9 +44,11 @@
       <file leaf-file-name="Resources.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="888">
-              <caret line="344" column="0" lean-forward="true" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="216">
+              <caret line="316" column="30" lean-forward="true" selection-start-line="316" selection-start-column="30" selection-end-line="316" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -287,12 +291,12 @@
       <workItem from="1496458435419" duration="11648000" />
       <workItem from="1496473969493" duration="138000" />
       <workItem from="1496474132757" duration="492000" />
-      <workItem from="1496494529772" duration="13092000" />
+      <workItem from="1496494529772" duration="13853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198355000" />
+    <option name="totallyTimeSpent" value="199116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="279" y="30" width="975" height="714" extended-state="0" />
@@ -786,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Training.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="268" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="360" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="834">
@@ -804,11 +800,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Training.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="330" column="4" lean-forward="true" selection-start-line="315" selection-start-column="0" selection-end-line="330" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="344" column="0" lean-forward="true" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="316" column="30" lean-forward="true" selection-start-line="316" selection-start-column="30" selection-end-line="316" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
