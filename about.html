@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Network Delaware volunteer Portal </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"
+            type="text/javascript"></script>
+
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+        .logo {
+            color: #588c9f;
+            font-size: 200px;
+            margin-top: 30px;
+        }
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        .item span {
+            font-style: normal;
+        }
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius:0 !important;
+            transition: box-shadow 0.5s;
+        }
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        .panel-footer {
+            background-color: white !important;
+        }
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+        #icons{
+            padding: 15px;
+            margin-left: 60px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: #588c9f;
+            height:70px;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #ffe486 !important;
+        }
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        #tagline{
+            padding: 20px;
+        }
+        #content{
+            padding:80px;
+        }
+        #googleMap{
+            margin-bottom: 10px;
+        }
+        .glyphicon {
+            position: relative;
+            top: 10px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="img/NetworkDelawareBlueLogo.png" alt="DE~ Volunteer~ Portal" style="width:200px;height:50px;">
+</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="donor.html">DONATE</a></li>
+                <li><a href="volunteer.html">VOLUNTEER</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                 <li><a href="orgarnize.html">ORGANIZE</a></li>
+                <li><a href="training.html">TRAINING</a></li>
+                <li><a href="stats.html">STATISTICS</a></li>
+            </ul>
+        </div>
+</nav>
+<br>
+
+<div id="content">
+<h2 style="text-align:center">A Digital Tool For Change</h2>
+<p style="text-align:center">We have created a platform for volunteers and leaders to engage with each other in order to enact social change. By building a network we can help people in the communities they call home. Nobody knows the problems in a certain area better than the people who live there. By supplying volunteers, awareness, and funding in our network we can make Delaware a better place.</p>
+<h2 style="text-align:center">Connecting People with People</h2>
+<p style="text-align:center">Organizations need people to make change and volunteers need organizations to get involved with. Anyone with an idea or problem can create their own "site" to reach out to people in the area. With the amount of information available and ways to reach out we can combine all efforts into one organized site.<p>
+<h2 style="text-align:center">Areas of Interest</h2>
+<h4 style="text-align:center">Economic Justice</h4>
+<p style="text-align:center">Economic justice is a component of social justice. It's a set of moral principles for building economic institutions, the ultimate goal of which is to create an opportunity for each person to create a sufficient material foundation upon which to have a dignified, productive, and creative life beyond economics.<p>
+<h4 style="text-align:center">Youth Engagement</h4>
+<p style="text-align:center">Youth engagement is the result when young people are involved in responsible, challenging actions to create positive social change. This means involving youth in planning and in making decisions that affect themselves and others.<p>
+<h4 style="text-align:center">Electoral Politics</h4>
+<p style="text-align:center">Electoral politics focuses on building a robust structure to support candidates for local, state and federal offices. By identifying, recruiting, and coordinating training and mentorship for candidates we will be able to enact change at a political level. This pillar will also establish a comprehensive fundraising system and support the development of responsive political parties.<p>
+<h4 style="text-align:center">Community Creativity</h4>
+<p style="text-align:center">Solving problems can be complex, so looking at things in a different light can be beneficial. Art can inspire people to think bigger and think differently. That is why it is a vital asset for communities working to take on big problems or seize opportunities.<p>
+<h4 style="text-align:center">Racial Justice</h4>
+<p style="text-align:center">Racial justice is a proactive reinforcement of policies, practices, attitudes and actions that produce equitable power, access, opportunities, treatment, impacts and outcomes for all. Most people view racism primarily as the result of individual action: personal prejudice or stereotyping, and intentional acts of discrimination by individuals.  However, racism is also defined as a set of societal, cultural, and institutional beliefs and practices that subordinate and oppress one race for the benefit of another. However, a racial justice definition includes these beliefs and acts, but considers individual acts of prejudice only one dimension of racism.<p>
+</div>
+
+          
+
+<br>
+<footer class="container-fluid text-center">
+    <div id="icons">
+    
+    <div class="col-sm-4">
+              <img src="img/facebookicon.png" alt="HTML5 Icon" style="width:128px;height:128px;">
+              <!-- <h2><a href=" orgarnizer.html">Organize</a></h2> -->
+          </div>
+          <div class="col-sm-4">
+             <img src="img/instagramicon.png" alt="HTML5 Icon" style="width:128px;height:128px;">
+          </div>
+          <div class="col-sm-4">
+              <!--<span class="glyphicon glyphicon-gift logo"></span>-->
+            <img src="img/twittericon.png" alt="HTML5 Icon" style="width:128px;height:128px;">
+          </div>
+    
+</div>
+</footer>
+
+
+ <script>
+      $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+</body>
+</html>
